@@ -87,14 +87,15 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 3000;
 
 httpServer.listen(PORT, () => {
+  const baseUrl = process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
   console.log(`
 🚀 Server is running on port ${PORT}
 📡 Socket.IO is active
 🔗 MongoDB connection established
   
 REST API Endpoints:
-  - GET  http://localhost:${PORT}/api/chat/history
-  - POST http://localhost:${PORT}/api/chat/start
+  - GET  ${baseUrl}/api/chat/history
+  - POST ${baseUrl}/api/chat/start
   
 Socket.IO Events:
   - joinChatRoom

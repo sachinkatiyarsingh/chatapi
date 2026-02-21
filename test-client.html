@@ -322,7 +322,7 @@
 
   <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
   <script>
-    const socket = io('http://localhost:3000');
+    const socket = io('https://chatapi-y3cg.onrender.com');
     let currentChatId = '';
     let currentUserId = '';
     let hasMessages = false;
@@ -588,7 +588,7 @@
         const formData = new FormData();
         formData.append('file', file);
         
-        const response = await fetch('http://localhost:3000/api/upload', {
+        const response = await fetch('https://chatapi-y3cg.onrender.com/api/upload', {
           method: 'POST',
           body: formData
         });
