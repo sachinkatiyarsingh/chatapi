@@ -1,11 +1,7 @@
 import mongoose from 'mongoose';
 
 const connectDB = async () => {
-  const uri = process.env.MONGODB_URI;
-  if (!uri) {
-    console.error('❌ MONGODB_URI is not set! Add it to your .env file or Render Environment tab.');
-    process.exit(1);
-  }
+  const uri = 'mongodb+srv://sachinkatiyar08_db_user:sLFPRxMVmUxt1Z33@cluster0.txzempy.mongodb.net/chatdb?retryWrites=true&w=majority&appName=Cluster0';
   try {
     const conn = await mongoose.connect(uri);
     
