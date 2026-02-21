@@ -1,15 +1,15 @@
+import dotenv from 'dotenv';
+// Load environment variables FIRST (before any other imports that may need them)
+dotenv.config();
+
 import express from 'express';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import connectDB from './src/config/database.js';
 import chatRoutes from './src/routes/chatRoutes.js';
 import uploadRoutes from './src/routes/uploadRoutes.js';
 import ChatSocketHandler from './src/socket/chatSocketHandler.js';
-
-// Load environment variables
-dotenv.config();
 
 // Initialize Express app
 const app = express();
